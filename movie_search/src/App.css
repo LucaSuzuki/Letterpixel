@@ -1,5 +1,5 @@
 body {
-  background-color: #00001b;
+  background-color: #000c0f;
   font-family: Arial, Helvetica, sans-serif;
   padding: 30px;
   color: aliceblue;
@@ -7,13 +7,24 @@ body {
 
 .navbar {
   display: flex;
+
+}
+
+ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchbar{
+  display: flex;
+  justify-content: end;
   
 }
 
 
-
 .app{
-  background-color: #310021ad;
+  background-color: #273031ad;
   max-width: 1300px;
   margin: 0 auto 300px;
   padding: 20px 30px;
