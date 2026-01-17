@@ -1,16 +1,39 @@
+import '../App.css'
+import { Link } from "react-router-dom"
+import TextField from "@mui/material/TextField"
 
 
-const navbar_movie = ({}) => {
+
+const NavbarMovie = ({ }) => {
   return (
     <nav className='navbar'>
-          <ul><h3>Homepage</h3></ul>
-          <ul><h3>Página de avaliação</h3></ul>
-          <ul className='searchbar'>
-            <input type='text' 
-            placeholder='Procure filmes aqui' />
-          </ul>
-        </nav>
+      <ul>
+        <h3><Link to="/">Página Inicial</Link></h3>
+      </ul>
+
+      <ul>
+        <h3><Link to="/rating">Avaliações</Link></h3>
+      </ul>
+
+      <ul className='searchbar'>
+        <TextField
+          sx={{
+            input: { color: 'aliceblue'},
+            label: { color: 'gray' },
+            "& .MuiOutlinedInput-root": {
+            "& fieldset": {
+              borderColor: "green",            
+              },
+              
+            "&.Mui-focused fieldset": {
+              borderColor: "#88E788",
+              }
+              }}}
+          id="outlined-basic"
+          label="Pesquise um filme" variant="outlined" />
+      </ul>
+    </nav>
   )
 }
 
-export default navbar_movie
+export default NavbarMovie

@@ -10,6 +10,12 @@ body {
 
 }
 
+a{
+  color: aliceblue;
+  text-decoration: none ;
+}
+
+
 ul{
   display: flex;
   justify-content: center;
@@ -19,6 +25,7 @@ ul{
 .searchbar{
   display: flex;
   justify-content: end;
+  border-radius: 4px;
   
 }
 

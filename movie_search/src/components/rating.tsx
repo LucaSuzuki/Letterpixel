@@ -1,9 +1,9 @@
 import { } from 'react'
 
-const rating = () => {
+const Rating = () => {
   return (
     <div>rating</div>
   )
 }
 
-export default rating
+export default Rating
