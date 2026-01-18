@@ -4,7 +4,7 @@ import './App.css'
 
 import './components/navbar_movie'
 import NavbarMovie from './components/navbar_movie'
-import Modal from "./components/Modal"
+import Moodal from "./components/Modal"
 import Rating from "./components/Rating"
 import Homepage from "./components/Homepage"
 
@@ -22,7 +22,7 @@ function App() {
             <Route path="/rating" element={<Rating /> } />
           </Routes>
 
-        <Modal/>
+        <Moodal/>
 
         </div>
       </BrowserRouter>
