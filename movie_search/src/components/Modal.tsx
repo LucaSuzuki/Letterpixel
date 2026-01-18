@@ -8,7 +8,7 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: 400,
-  bgcolor: "background.paper",
+  bgcolor: "#001a03",
   border: "2px solid #000",
   boxShadow: 24,
   pt: 2,
@@ -34,13 +34,13 @@ const Moodal = () => {
         aria-describedby="parent-modal-description"
       >
         <Box sx={style}>
-          <h2 id="parent-modal-title">Modal principal</h2>
+          <h2 id="parent-modal-title">Título</h2>
           <p id="parent-modal-description">
-            Conteúdo do modal principal
+            Sinopse e Duração
           </p>
 
           <Button onClick={() => setOpenChild(true)}>
-            Abrir modal interno
+            Elenco
           </Button>
 
           {/* MODAL FILHO */}
@@ -51,13 +51,13 @@ const Moodal = () => {
             aria-describedby="child-modal-description"
           >
             <Box sx={{ ...style, width: 200 }}>
-              <h3 id="child-modal-title">Modal interno</h3>
+              <h3 id="child-modal-title">Elenco</h3>
               <p id="child-modal-description">
-                Conteúdo do modal interno
+                Atores
               </p>
 
               <Button onClick={() => setOpenChild(false)}>
-                Fechar interno
+                Voltar para o Filme
               </Button>
             </Box>
           </Modal>
