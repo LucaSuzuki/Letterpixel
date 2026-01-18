@@ -1,6 +1,6 @@
 import { Modal, Box, Button } from "@mui/material"
 import { useState } from "react"
-
+import Filme from "../imgtest/capsule_616x353.jpg"
 
 const style = {
   position: "absolute" as const,
@@ -23,7 +23,11 @@ const Moodal = () => {
        return (
     <>
       <Button onClick={() => setOpenParent(true)}>
-        Abrir modal
+        <figure>
+          <img src={Filme} alt="Filme" width={300}/>
+          <figcaption>Abrir Filme</figcaption>
+        </figure>
+        
       </Button>
 
       {/* MODAL PAI */}
@@ -34,9 +38,10 @@ const Moodal = () => {
         aria-describedby="parent-modal-description"
       >
         <Box sx={style}>
-          <h2 id="parent-modal-title">Título</h2>
+          <h2 id="parent-modal-title">UltraSuzuki</h2>
           <p id="parent-modal-description">
-            Sinopse e Duração
+            Humanidade está morta. Sangue é combustível. O inferno está cheio.
+            2h 30min
           </p>
 
           <Button onClick={() => setOpenChild(true)}>
@@ -50,10 +55,13 @@ const Moodal = () => {
             aria-labelledby="child-modal-title"
             aria-describedby="child-modal-description"
           >
-            <Box sx={{ ...style, width: 200 }}>
+            <Box sx={{ ...style, width: 500 }}>
               <h3 id="child-modal-title">Elenco</h3>
               <p id="child-modal-description">
-                Atores
+                <figure>
+                  <img src={Filme} alt="Filme" width={200}/>
+                  <figcaption>Ultra (V1)</figcaption>
+                </figure>
               </p>
 
               <Button onClick={() => setOpenChild(false)}>

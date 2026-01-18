@@ -1,6 +1,7 @@
 import '../App.css'
 import { Link } from "react-router-dom"
-import TextField from "@mui/material/TextField"
+import Searchbar from './Searchbar'
+
 
 
 
@@ -16,21 +17,7 @@ const NavbarMovie = ({ }) => {
       </ul>
 
       <ul className='searchbar'>
-        <TextField
-          sx={{
-            input: { color: 'aliceblue'},
-            label: { color: 'gray' },
-            "& .MuiOutlinedInput-root": {
-            "& fieldset": {
-              borderColor: "green",            
-              },
-              
-            "&.Mui-focused fieldset": {
-              borderColor: "#88E788",
-              }
-              }}}
-          id="outlined-basic"
-          label="Pesquise um filme" variant="outlined" />
+        <Searchbar/>
       </ul>
     </nav>
   )
