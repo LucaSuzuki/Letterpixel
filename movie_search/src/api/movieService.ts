@@ -52,7 +52,42 @@ export async function getCast(id: number) {
         .then(result => result.json())
         .catch(error => console.error(error));
 
-    const actors = data.cast.slice(0, 10)
+    const actors = data.cast.slice(0, 7)
 
     return actors
+}
+
+export async function getMovieById(id: number) {
+    const url = MOVIE_DB_BASE_URL + "/movie/" + id + "?language=pt-BR"
+    const options = {
+        method: "GET",
+        headers: {
+            accept: "application/json",
+            Authorization: AUTHORIZATION,
+        },
+    }
+
+    return fetch(url, options)
+        .then((result) => result.json())
+        .catch((error) => console.error(error))
+}
+
+export async function searchMovies(query: string, page = 1) {
+    const url =
+        MOVIE_DB_BASE_URL +
+        "/search/movie?include_adult=false&language=pt-BR&page=" +
+        page +
+        "&query=" +
+        encodeURIComponent(query)
+    const options = {
+        method: "GET",
+        headers: {
+            accept: "application/json",
+            Authorization: AUTHORIZATION,
+        },
+    }
+
+    return fetch(url, options)
+        .then((result) => result.json())
+        .catch((error) => console.error(error))
 }

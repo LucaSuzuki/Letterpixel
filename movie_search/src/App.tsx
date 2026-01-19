@@ -6,6 +6,7 @@ import './components/NavbarMovie'
 import NavbarMovie from './components/NavbarMovie'
 import Rating from "./components/Rating"
 import Homepage from "./components/Homepage"
+import MovieDetails from "./components/MovieDetails"
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
           <Routes>
             <Route index element={<Homepage /> } />
             <Route path="/rating" element={<Rating /> } />
+            <Route path="/movie/:id" element={<MovieDetails /> } />
           </Routes>
 
 

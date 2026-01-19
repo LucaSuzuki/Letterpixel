@@ -1,5 +1,5 @@
 import { Modal, Box, Button, } from "@mui/material"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 import RatingSystem from "./RatingSystem"
 import { getCast } from "../api/movieService"
@@ -20,13 +20,18 @@ const style = {
   pb: 3,
 }
 
-const CardMovie = ({ movie }: any) => {
+const CardMovie = ({ movie, autoOpen = false }: { movie: any; autoOpen?: boolean }) => {
   const [openParent, setOpenParent] = useState(false)
   const [openChild, setOpenChild] = useState(false)
   const [loading, setLoading] = useState(false)
   const [cast, setCast] = useState([])
   const POSTER_URL = "https://image.tmdb.org/t/p/w342/"
   const PROFILE_URL = "https://image.tmdb.org/t/p/w45/"
+  useEffect(() => {
+    if (autoOpen) {
+      setOpenParent(true)
+    }
+  }, [autoOpen])
   function showCast() {
     setLoading(true)
     getCast(movie.id).then(response => {
