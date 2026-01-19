@@ -2,7 +2,7 @@ import { AUTHORIZATION, MOVIE_DB_BASE_URL } from "./api";
 
 export async function getMovies(page: number) {
 
-    const url = MOVIE_DB_BASE_URL + "/discover/movie?include_adult=false&include_video=false&language=en-US&page=" + page + "&sort_by=popularity.desc"
+    const url = MOVIE_DB_BASE_URL + "/discover/movie?include_adult=false&include_video=false&language=pt-BR&page=" + page + "&sort_by=popularity.desc"
     const options = {
         method: 'GET',
         headers: {
@@ -33,4 +33,23 @@ export async function getRatedMovies(ids: number[]) {
             .catch(err => console.error(err));
     })
     return movies
+}
+
+export async function getCast(id: number) {
+    const cast = MOVIE_DB_BASE_URL + "/movie/" + id + "/credits?language=pt-BR"
+    const options = {
+        method: 'GET',
+        headers: {
+            accept: 'application/json',
+            Authorization: AUTHORIZATION
+        }
+    };
+
+    const data = await fetch(cast, options)
+        .then(result => result.json())
+        .catch(error => console.error(error));
+
+    const actors = data.cast.slice(0, 10)
+    
+    return actors
 }
