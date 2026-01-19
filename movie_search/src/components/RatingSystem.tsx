@@ -5,7 +5,7 @@ const RatingSystem = () => {
     return (
         <>
             <Stack spacing={1}>
-                <Rating name="half-rating" defaultValue={5} precision={0.5} />
+                <Rating name="half-rating" defaultValue={0} precision={0.5} />
             </Stack>
         </>
     )

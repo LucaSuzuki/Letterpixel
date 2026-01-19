@@ -22,6 +22,10 @@ ul{
   align-items: center;
 }
 
+figcaption{
+  color:aliceblue;
+}
+
 .searchbar{
   display: flex;
   justify-content: end;

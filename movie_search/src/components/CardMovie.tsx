@@ -1,4 +1,4 @@
-import { Modal, Box, Button } from "@mui/material"
+import { Modal, Box, Button, } from "@mui/material"
 import { useState } from "react"
 import Filme from "../imgtest/capsule_616x353.jpg"
 import RatingSystem from "./RatingSystem"
@@ -17,7 +17,7 @@ const style = {
   pb: 3,
 }
 
-const Moodal = () => {
+const CardMovie = ({movie}: any) => {
     const [openParent, setOpenParent] = useState(false)
     const [openChild, setOpenChild] = useState(false)
 
@@ -25,8 +25,8 @@ const Moodal = () => {
     <>
       <Button onClick={() => setOpenParent(true)}>
         <figure>
-          <img src={Filme} alt="Filme" width={300}/>
-          <figcaption>Abrir Filme</figcaption>
+          <img src={movie.poster} alt={movie.nome} width={300}/>
+          <figcaption>{movie.nome}</figcaption>
         </figure>
         
       </Button>
@@ -78,4 +78,4 @@ const Moodal = () => {
   )
 }
 
-export default Moodal
+export default CardMovie
