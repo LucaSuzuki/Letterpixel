@@ -1,6 +1,7 @@
 import { Modal, Box, Button } from "@mui/material"
 import { useState } from "react"
 import Filme from "../imgtest/capsule_616x353.jpg"
+import RatingSystem from "./RatingSystem"
 
 const style = {
   position: "absolute" as const,
@@ -38,6 +39,7 @@ const Moodal = () => {
         aria-describedby="parent-modal-description"
       >
         <Box sx={style}>
+          <RatingSystem />
           <h2 id="parent-modal-title">UltraSuzuki</h2>
           <p id="parent-modal-description">
             Humanidade está morta. Sangue é combustível. O inferno está cheio.
@@ -54,6 +56,7 @@ const Moodal = () => {
             onClose={() => setOpenChild(false)}
             aria-labelledby="child-modal-title"
             aria-describedby="child-modal-description"
+            
           >
             <Box sx={{ ...style, width: 500 }}>
               <h3 id="child-modal-title">Elenco</h3>
