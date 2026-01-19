@@ -21,12 +21,13 @@ const style = {
 const CardMovie = ({movie}: any) => {
     const [openParent, setOpenParent] = useState(false)
     const [openChild, setOpenChild] = useState(false)
+    const POSTER_URL = "https://image.tmdb.org/t/p/w342/" 
 
        return (
     <>
       <Button onClick={() => setOpenParent(true)}>
         <figure>
-          <img src={movie.poster_path} alt={movie.title} width={300}/>
+          <img src={POSTER_URL + movie.poster_path} alt={movie.title} width={300}/>
           <figcaption>{movie.title}</figcaption>
         </figure>
         
