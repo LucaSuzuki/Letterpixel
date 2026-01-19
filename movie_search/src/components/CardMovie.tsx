@@ -2,6 +2,7 @@ import { Modal, Box, Button, } from "@mui/material"
 import { useState } from "react"
 import Filme from "../imgtest/capsule_616x353.jpg"
 import RatingSystem from "./RatingSystem"
+import type { Movie } from "../model/movie"
 
 const style = {
   position: "absolute" as const,
@@ -25,8 +26,8 @@ const CardMovie = ({movie}: any) => {
     <>
       <Button onClick={() => setOpenParent(true)}>
         <figure>
-          <img src={movie.poster} alt={movie.nome} width={300}/>
-          <figcaption>{movie.nome}</figcaption>
+          <img src={movie.poster_path} alt={movie.title} width={300}/>
+          <figcaption>{movie.title}</figcaption>
         </figure>
         
       </Button>

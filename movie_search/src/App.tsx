@@ -4,10 +4,8 @@ import './App.css'
 
 import './components/NavbarMovie'
 import NavbarMovie from './components/NavbarMovie'
-import Moodal from "./components/CardMovie"
 import Rating from "./components/Rating"
 import Homepage from "./components/Homepage"
-import CardMovie from "./components/CardMovie"
 
 function App() {
 

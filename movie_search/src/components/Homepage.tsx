@@ -1,14 +1,23 @@
 import { Pagination } from "@mui/material"
 import CardMovie from "./CardMovie"
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { getMovies } from "../api/movieService"
+import type { Movie } from "../model/movie"
 
 const Homepage = () => {
   const pages = 10
   const [page, setPage] = useState(1)
-  const movies = [
-    { nome: "Nome", poster: "IMG", id: 1 },
-    { nome: "Outro nome", poster: "outroIMG", id: 2 }
-  ]
+  const [movies, setMovies] = useState<Movie[]>([])
+
+  useEffect(() => {
+    const fetchMovies = async () => {
+      const data = await getMovies(page)
+      setMovies(data.results ?? data)
+    }
+
+    fetchMovies()
+  }, [page])
+
   return (
     <>
       {movies.map(movie =>

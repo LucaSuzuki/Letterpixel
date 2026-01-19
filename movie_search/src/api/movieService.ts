@@ -10,6 +10,7 @@ export async function getMovies(page: number) {
             Authorization: AUTHORIZATION
         }
     };
+
     return fetch(url, options)
         .then(result => result.json())
         .catch(error => console.error(error));
