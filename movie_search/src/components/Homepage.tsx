@@ -12,12 +12,10 @@ const Homepage = () => {
   useEffect(() => {
     const fetchMovies = async () => {
       const data = await getMovies(page)
+      
       setMovies(data.results ?? data)
       setTotalPages(Math.min(data.total_pages, 500))
     }
-
-
-
     fetchMovies()
   }, [page])
 

@@ -1,0 +1,1 @@
+CREATE TABLE `letterpixel`.`Rating` (`movie_id` INT NOT NULL , `movie_rating` FLOAT NOT NULL , UNIQUE `movie_id_idx` (`movie_id`));

@@ -1,3 +1,4 @@
 const API_MOVIE_DB_TOKEN = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1MGYwMTMxN2Y3MDc0YjBjNTkxZjAzYzM5OGU3YjJlMiIsIm5iZiI6MTc2ODc2ODY1Ny43ODQ5OTk4LCJzdWIiOiI2OTZkNDQ5MWQ1MDBlZjliZmM2OGEwNjYiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.Rbp8URkFM_knagAS3xBuwQs-8aS1auPaW_ulxCWOhBA"
 export const AUTHORIZATION = "Bearer " + API_MOVIE_DB_TOKEN
 export const MOVIE_DB_BASE_URL = "https://api.themoviedb.org/3"
+export const RATING_DB_BASE_URL = "http://localhost:5000"

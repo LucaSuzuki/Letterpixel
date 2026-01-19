@@ -4,5 +4,6 @@ export type Movie = {
   overview: string
   poster_path: string | null
   release_date: string
+  movie_rating?: number
 }
 

@@ -56,7 +56,7 @@ const CardMovie = ({ movie }: any) => {
         aria-describedby="parent-modal-description"
       >
         <Box sx={style}>
-          <RatingSystem />
+          <RatingSystem movie={movie} />
           <h2 id="parent-modal-title">{movie.title}</h2>
           <p id="parent-modal-description">
             {movie.overview}

@@ -23,17 +23,20 @@ export async function getRatedMovies(ids: number[]) {
             accept: 'application/json',
             Authorization: AUTHORIZATION
         }
-    };
-    const movies = ids.map(id => {
+    }
 
+
+    const promises = ids.map(id => {
         const url = MOVIE_DB_BASE_URL + "/movie/" + id
-
-        return fetch(url, options)
-            .then(res => res.json())
-            .catch(err => console.error(err));
+        return fetch(url, options).then(res => res.json())
     })
+
+ 
+    const movies = await Promise.all(promises)
+
     return movies
 }
+
 
 export async function getCast(id: number) {
     const cast = MOVIE_DB_BASE_URL + "/movie/" + id + "/credits?language=pt-BR"
@@ -50,6 +53,6 @@ export async function getCast(id: number) {
         .catch(error => console.error(error));
 
     const actors = data.cast.slice(0, 10)
-    
+
     return actors
 }
